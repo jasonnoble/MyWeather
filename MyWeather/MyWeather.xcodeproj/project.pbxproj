@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C9652F41C7FF4CC00DEA3D9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C9652F21C7FF4CC00DEA3D9 /* Alamofire.framework */; };
+		8C9652F51C7FF4CC00DEA3D9 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C9652F21C7FF4CC00DEA3D9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8C9652F61C7FF4CC00DEA3D9 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C9652F31C7FF4CC00DEA3D9 /* SwiftyJSON.framework */; };
+		8C9652F71C7FF4CC00DEA3D9 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C9652F31C7FF4CC00DEA3D9 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8CF19DE61C7FEE4B00E22CE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF19DE51C7FEE4B00E22CE8 /* AppDelegate.swift */; };
 		8CF19DE81C7FEE4B00E22CE8 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF19DE71C7FEE4B00E22CE8 /* MasterViewController.swift */; };
 		8CF19DEA1C7FEE4B00E22CE8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF19DE91C7FEE4B00E22CE8 /* DetailViewController.swift */; };
@@ -26,7 +30,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8CF19E251C7FF40000E22CE8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8C9652F71C7FF4CC00DEA3D9 /* SwiftyJSON.framework in Embed Frameworks */,
+				8C9652F51C7FF4CC00DEA3D9 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		8C9652F21C7FF4CC00DEA3D9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		8C9652F31C7FF4CC00DEA3D9 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		8CF19DE21C7FEE4B00E22CE8 /* MyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF19DE51C7FEE4B00E22CE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CF19DE71C7FEE4B00E22CE8 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C9652F61C7FF4CC00DEA3D9 /* SwiftyJSON.framework in Frameworks */,
+				8C9652F41C7FF4CC00DEA3D9 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +84,8 @@
 		8CF19DD91C7FEE4B00E22CE8 = {
 			isa = PBXGroup;
 			children = (
+				8C9652F21C7FF4CC00DEA3D9 /* Alamofire.framework */,
+				8C9652F31C7FF4CC00DEA3D9 /* SwiftyJSON.framework */,
 				8CF19DE41C7FEE4B00E22CE8 /* MyWeather */,
 				8CF19DFB1C7FEE4B00E22CE8 /* MyWeatherTests */,
 				8CF19DE31C7FEE4B00E22CE8 /* Products */,
@@ -109,6 +134,8 @@
 				8CF19DDE1C7FEE4B00E22CE8 /* Sources */,
 				8CF19DDF1C7FEE4B00E22CE8 /* Frameworks */,
 				8CF19DE01C7FEE4B00E22CE8 /* Resources */,
+				8CF19E1E1C7FF33400E22CE8 /* ShellScript */,
+				8CF19E251C7FF40000E22CE8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,6 +221,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8CF19E1E1C7FF33400E22CE8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8CF19DDE1C7FEE4B00E22CE8 /* Sources */ = {
@@ -331,6 +376,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MyWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.jasonnoble.MyWeather;
@@ -342,6 +391,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MyWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.jasonnoble.MyWeather;
@@ -392,6 +445,7 @@
 				8CF19E031C7FEE4B00E22CE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8CF19E041C7FEE4B00E22CE8 /* Build configuration list for PBXNativeTarget "MyWeatherTests" */ = {
 			isa = XCConfigurationList;
@@ -400,6 +454,7 @@
 				8CF19E061C7FEE4B00E22CE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
